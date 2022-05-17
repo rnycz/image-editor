@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Image Editor</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="action-content">
+        <label for="image-input"><i class="fa-solid fa-upload"></i> Upload image </label>
+        <input accept="image/*" type='file' id="image-input" />
+        <button id="download"><i class="fa-solid fa-download"></i> Download image </button>
+        <button id="reset"><i class="fa-solid fa-rotate-left"></i> Reset changes </button>
+        <a id="link"></a>
+      </div>
+      <div class="image-content">
+        <img id="source-image" crossorigin="anonymous">
+        <canvas id="image-display"></canvas>
+        <p id="edit-info">Upload the image and then edit it</p>
+      </div>
+      <div class="editor-content">
+        <div class="slider-content">
+          <div>Brightness</div>
+          <input type="range" min="0" max="200" value="100" class="slider" id="brightness-input">
+          <output class="output" id="brightness-value"></output>
+        </div>
+        <div class="slider-content">
+          <div>Contrast</div>
+          <input type="range" min="0" max="200" value="100" class="slider" id="contrast-input">
+          <output class="output" id="contrast-value"></output>
+        </div>
+        <div class="slider-content">
+          <div>Saturate</div>
+          <input type="range" min="0" max="400" value="100" class="slider" id="saturate-input">
+          <output class="output" id="saturate-value"></output>
+        </div>
+        <div class="slider-content">
+          <div>Sepia</div>
+          <input type="range" min="0" max="100" value="0" class="slider" id="sepia-input">
+          <output class="output" id="sepia-value"></output>
+        </div>
+        <div class="slider-content">
+          <div>Hue rotate</div>
+          <input type="range" min="0" max="360" value="0" class="slider" id="rotate-input">
+          <output class="output" id="rotate-value"></output>
+        </div>
+        <div class="slider-content">
+          <div>Invert</div>
+          <input type="range" min="0" max="100" value="0" class="slider" id="invert-input">
+          <output class="output" id="invert-value"></output>
+        </div>
+        <div class="slider-content">
+          <div>Blur</div>
+          <input type="range" min="0" max="10" value="0" step="0.1" class="slider" id="blur-input">
+          <output class="output" id="blur-value"></output>
+        </div>
+        <div class="slider-content">
+          <div>Grayscale</div>
+          <input type="range" min="0" max="100" value="0" class="slider" id="grayscale-input">
+          <output class="output" id="grayscale-value"></output>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
