@@ -22,45 +22,81 @@
         <p id="edit-info">Upload the image and then edit it</p>
       </div>
       <div class="editor-content">
-        <div class="slider-content">
-          <div>Brightness</div>
-          <input type="range" min="0" max="200" value="100" class="slider" id="brightness-input">
-          <output class="output" id="brightness-value"></output>
+        <button class="dropdown-btn">Filters 
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="wrapper">
+          <div class="dropdown-container">
+            <div class="slider-content">
+              <div>Brightness</div>
+              <input type="range" min="0" max="200" value="100" class="slider" id="brightness-input">
+              <output class="output" id="brightness-value"></output>
+            </div>
+            <div class="slider-content">
+              <div>Contrast</div>
+              <input type="range" min="0" max="200" value="100" class="slider" id="contrast-input">
+              <output class="output" id="contrast-value"></output>
+            </div>
+            <div class="slider-content">
+              <div>Saturate</div>
+              <input type="range" min="0" max="400" value="100" class="slider" id="saturate-input">
+              <output class="output" id="saturate-value"></output>
+            </div>
+            <div class="slider-content">
+              <div>Sepia</div>
+              <input type="range" min="0" max="100" value="0" class="slider" id="sepia-input">
+              <output class="output" id="sepia-value"></output>
+            </div>
+            <div class="slider-content">
+              <div>Hue rotate</div>
+              <input type="range" min="0" max="360" value="0" class="slider" id="rotate-input">
+              <output class="output" id="rotate-value"></output>
+            </div>
+            <div class="slider-content">
+              <div>Blur</div>
+              <input type="range" min="0" max="10" value="0" step="0.1" class="slider" id="blur-input">
+              <output class="output" id="blur-value"></output>
+            </div>
+            <div class="slider-content">
+              <div>Grayscale</div>
+              <input type="range" min="0" max="100" value="0" class="slider" id="grayscale-input">
+              <output class="output" id="grayscale-value"></output>
+            </div>
+            <div class="slider-content-button">
+              <input type="button" value="Invert" class="button" id="invert-input">
+            </div>
+          </div>
         </div>
-        <div class="slider-content">
-          <div>Contrast</div>
-          <input type="range" min="0" max="200" value="100" class="slider" id="contrast-input">
-          <output class="output" id="contrast-value"></output>
-        </div>
-        <div class="slider-content">
-          <div>Saturate</div>
-          <input type="range" min="0" max="400" value="100" class="slider" id="saturate-input">
-          <output class="output" id="saturate-value"></output>
-        </div>
-        <div class="slider-content">
-          <div>Sepia</div>
-          <input type="range" min="0" max="100" value="0" class="slider" id="sepia-input">
-          <output class="output" id="sepia-value"></output>
-        </div>
-        <div class="slider-content">
-          <div>Hue rotate</div>
-          <input type="range" min="0" max="360" value="0" class="slider" id="rotate-input">
-          <output class="output" id="rotate-value"></output>
-        </div>
-        <div class="slider-content">
-          <div>Invert</div>
-          <input type="range" min="0" max="100" value="0" class="slider" id="invert-input">
-          <output class="output" id="invert-value"></output>
-        </div>
-        <div class="slider-content">
-          <div>Blur</div>
-          <input type="range" min="0" max="10" value="0" step="0.1" class="slider" id="blur-input">
-          <output class="output" id="blur-value"></output>
-        </div>
-        <div class="slider-content">
-          <div>Grayscale</div>
-          <input type="range" min="0" max="100" value="0" class="slider" id="grayscale-input">
-          <output class="output" id="grayscale-value"></output>
+        <button class="dropdown-btn">Drawing
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="wrapper">
+          <div class="dropdown-container">
+            <div class="paint-wrapper">
+              <div>Select styles and click brush to draw</div>
+              <div>Line width:
+                <div class="line-width-wrapper">
+                  <button id="line-minus"><i class="fa-solid fa-caret-down"></i></button>
+                  <input type="number" id="line-width">
+                  <button id="line-plus"><i class="fa-solid fa-caret-up"></i></button>
+                </div>
+              </div>
+              <div class="line-color-wrapper">
+                <input type="color" id="line-color" value="#B30000">
+                <div class="color-info">Line Color</div>
+              </div>
+              <div>Line cap:
+                <select name="cars" id="line-cap">
+                  <option value="round" selected>Round</option>
+                  <option value="butt">Butt</option>
+                  <option value="square">Square</option>
+                </select>
+              </div>
+              <button id="painting">
+                <i class="fa-solid fa-paintbrush"></i>
+              </button>
+            </div>
+          </div>  
         </div>
       </div>
     </div>
