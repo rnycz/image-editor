@@ -14,9 +14,8 @@ background.onload = () => {
 document.querySelectorAll(".slider").forEach(element => {
 	element.disabled = true;
 });
-document.querySelectorAll(".button").forEach(element => {
-	element.disabled = true;
-});
+document.querySelector("#invert-input").disabled = true;
+document.querySelector("#painting").disabled = true;
 
 imageInput.addEventListener("change", (event) => {
 	const [file] = imageInput.files;
@@ -31,9 +30,8 @@ imageInput.addEventListener("change", (event) => {
 		document.querySelectorAll(".slider").forEach(element => {
 			element.disabled = false;
 		});
-		document.querySelectorAll(".button").forEach(element => {
-			element.disabled = false;
-		});
+		document.querySelector("#invert-input").disabled = false;
+		document.querySelector("#painting").disabled = false;
 		document.querySelector("#edit-info").style.display = "none";
 	};
 });
@@ -146,6 +144,7 @@ document.querySelector("#line-plus").addEventListener("click", function(){
 		duration: 300
 	});
 })
+
 //blur effect
 const blurInput = document.querySelector("#blur-input");
 const blurValue = document.querySelector("#blur-value");
@@ -256,13 +255,22 @@ const resetChanges = () => {
 document.querySelector("#reset").onclick = resetChanges;
 
 const downloadImg = () => {
-	const linkElement = document.querySelector('#link');
-	linkElement.setAttribute('download', 'image_from_editor.png');
+	try {
+		const linkElement = document.querySelector('#link');
+		linkElement.setAttribute('download', 'image_from_editor.png');
 
-	const canvasData = imageDisplay.toDataURL("image/png");
-	canvasData.replace("image/png", "image/octet-stream");
+		const canvasData = imageDisplay.toDataURL("image/png");
+		canvasData.replace("image/png", "image/octet-stream");
 
-	linkElement.setAttribute('href', canvasData);
-	linkElement.click();
+		linkElement.setAttribute('href', canvasData);
+		linkElement.click();
+	} catch (error) {
+		document.querySelector("#edit-info").animate([
+			{ transform: 'scale(0)' },
+			{ transform: 'scale(1)' }
+		],{
+			duration: 500
+		})
+	}
 }
 document.querySelector("#download").onclick = downloadImg;
