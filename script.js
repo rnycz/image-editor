@@ -20,8 +20,15 @@ document.querySelector("#painting").disabled = true;
 imageInput.addEventListener("change", (event) => {
 	const [file] = imageInput.files;
 	if(file) {
-		imageSource.src = URL.createObjectURL(file);
+		setTimeout(()=>{imageSource.src = URL.createObjectURL(file)},500);
 	}
+	imageDisplay.animate([
+		{transform: 'scale(1)', opacity: 1},
+		{transform: 'scale(0)', opacity: 0},
+		{transform: 'scale(1)', opacity: 1}
+	],{
+		duration: 1000
+	});
 	imageSource.onload = function() {
 		imageDisplay.width = this.width;
 		imageDisplay.height = this.height;
@@ -264,6 +271,14 @@ const downloadImg = () => {
 
 		linkElement.setAttribute('href', canvasData);
 		linkElement.click();
+
+		imageDisplay.animate([
+			{transform: 'rotate(0) scale(1)', opacity: 1},
+			{transform: 'rotate(360deg) scale(0)', opacity: 0},
+			{transform: 'rotate(0) scale(1)', opacity: 1}
+		],{
+			duration: 1500
+		})
 	} catch (error) {
 		document.querySelector("#edit-info").animate([
 			{ transform: 'scale(0)' },
