@@ -22,11 +22,29 @@ body{
 @mixin button-style {
     cursor: pointer;
     border-radius: 5px;
+    background-color: rgb(78, 78, 78);
     padding: 6px 10px;
     border: none;
     font-size: 15px;
     transition: background-color 0.4s;
-    box-shadow: 0 6px 16px 3px #494949;
+    color: white;
+    &:hover{
+        background-color: inherit;
+        box-shadow: 0 0 15px 2px rgb(96, 95, 95);
+    }
+}
+@keyframes updown-animation {
+    0%{
+        transform: translateY(-5px);
+    }
+    100%{
+        transform: translateY(5px);
+    }
+}
+@keyframes rotate-animation {
+    100%{
+        transform:rotate(-360deg);
+    }
 }
 .action-content{
     grid-area: nav;
@@ -40,24 +58,27 @@ body{
         display: none;
     }
     label{
-        background-color: goldenrod;
         @include button-style;
         &:hover{
-            background-color: gold;
+            i{
+                animation: updown-animation 0.5s infinite alternate;
+            }
         }
     }
     #download{
-        background-color: yellowgreen;
         @include button-style;
         &:hover{
-            background-color: rgb(191, 255, 63);
+            i{
+                animation: updown-animation 0.5s infinite alternate;
+            }
         }
     }
     #reset{
-        background-color:rgb(192, 1, 1) ;
         @include button-style;
         &:hover{
-            background-color: red;
+            i{
+                animation: rotate-animation 1s infinite linear;
+            }
         }
     }
 }
@@ -107,11 +128,13 @@ body{
                 width: 47%;
                 #invert-input{
                     width: 150px;
-                    background-color:rgb(179, 178, 178);
                     font-weight: bold;
                     @include button-style;
+                    background-color:rgb(179, 178, 178);
+                    color: black;
                     &:hover{
-                        background-color: gainsboro;
+                        background-color: inherit;
+                        color: white;
                     }
                     &:disabled{
                         cursor: not-allowed;

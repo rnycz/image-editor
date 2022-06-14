@@ -23,6 +23,42 @@ body {
   margin: 20px 5px 50px 5px;
 }
 
+@-webkit-keyframes updown-animation {
+  0% {
+    -webkit-transform: translateY(-5px);
+            transform: translateY(-5px);
+  }
+  100% {
+    -webkit-transform: translateY(5px);
+            transform: translateY(5px);
+  }
+}
+
+@keyframes updown-animation {
+  0% {
+    -webkit-transform: translateY(-5px);
+            transform: translateY(-5px);
+  }
+  100% {
+    -webkit-transform: translateY(5px);
+            transform: translateY(5px);
+  }
+}
+
+@-webkit-keyframes rotate-animation {
+  100% {
+    -webkit-transform: rotate(-360deg);
+            transform: rotate(-360deg);
+  }
+}
+
+@keyframes rotate-animation {
+  100% {
+    -webkit-transform: rotate(-360deg);
+            transform: rotate(-360deg);
+  }
+}
+
 .action-content {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
@@ -43,54 +79,72 @@ body {
 }
 
 .action-content label {
-  background-color: goldenrod;
   cursor: pointer;
   border-radius: 5px;
+  background-color: #4e4e4e;
   padding: 6px 10px;
   border: none;
   font-size: 15px;
   -webkit-transition: background-color 0.4s;
   transition: background-color 0.4s;
-  -webkit-box-shadow: 0 6px 16px 3px #494949;
-          box-shadow: 0 6px 16px 3px #494949;
+  color: white;
 }
 
 .action-content label:hover {
-  background-color: gold;
+  background-color: inherit;
+  -webkit-box-shadow: 0 0 15px 2px #605f5f;
+          box-shadow: 0 0 15px 2px #605f5f;
+}
+
+.action-content label:hover i {
+  -webkit-animation: updown-animation 0.5s infinite alternate;
+          animation: updown-animation 0.5s infinite alternate;
 }
 
 .action-content #download {
-  background-color: yellowgreen;
   cursor: pointer;
   border-radius: 5px;
+  background-color: #4e4e4e;
   padding: 6px 10px;
   border: none;
   font-size: 15px;
   -webkit-transition: background-color 0.4s;
   transition: background-color 0.4s;
-  -webkit-box-shadow: 0 6px 16px 3px #494949;
-          box-shadow: 0 6px 16px 3px #494949;
+  color: white;
 }
 
 .action-content #download:hover {
-  background-color: #bfff3f;
+  background-color: inherit;
+  -webkit-box-shadow: 0 0 15px 2px #605f5f;
+          box-shadow: 0 0 15px 2px #605f5f;
+}
+
+.action-content #download:hover i {
+  -webkit-animation: updown-animation 0.5s infinite alternate;
+          animation: updown-animation 0.5s infinite alternate;
 }
 
 .action-content #reset {
-  background-color: #c00101;
   cursor: pointer;
   border-radius: 5px;
+  background-color: #4e4e4e;
   padding: 6px 10px;
   border: none;
   font-size: 15px;
   -webkit-transition: background-color 0.4s;
   transition: background-color 0.4s;
-  -webkit-box-shadow: 0 6px 16px 3px #494949;
-          box-shadow: 0 6px 16px 3px #494949;
+  color: white;
 }
 
 .action-content #reset:hover {
-  background-color: red;
+  background-color: inherit;
+  -webkit-box-shadow: 0 0 15px 2px #605f5f;
+          box-shadow: 0 0 15px 2px #605f5f;
+}
+
+.action-content #reset:hover i {
+  -webkit-animation: rotate-animation 1s infinite linear;
+          animation: rotate-animation 1s infinite linear;
 }
 
 .editor-content {
@@ -172,21 +226,29 @@ body {
 
 .editor-content .wrapper .dropdown-container .slider-content-button #invert-input {
   width: 150px;
-  background-color: #b3b2b2;
   font-weight: bold;
   cursor: pointer;
   border-radius: 5px;
+  background-color: #4e4e4e;
   padding: 6px 10px;
   border: none;
   font-size: 15px;
   -webkit-transition: background-color 0.4s;
   transition: background-color 0.4s;
-  -webkit-box-shadow: 0 6px 16px 3px #494949;
-          box-shadow: 0 6px 16px 3px #494949;
+  color: white;
+  background-color: #b3b2b2;
+  color: black;
 }
 
 .editor-content .wrapper .dropdown-container .slider-content-button #invert-input:hover {
-  background-color: gainsboro;
+  background-color: inherit;
+  -webkit-box-shadow: 0 0 15px 2px #605f5f;
+          box-shadow: 0 0 15px 2px #605f5f;
+}
+
+.editor-content .wrapper .dropdown-container .slider-content-button #invert-input:hover {
+  background-color: inherit;
+  color: white;
 }
 
 .editor-content .wrapper .dropdown-container .slider-content-button #invert-input:disabled {
